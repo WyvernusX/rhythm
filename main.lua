@@ -1,4 +1,6 @@
 image = love.graphics.newImage("image.png")
+test1 = love.audio.newSource("music.mp3", "static")
+playing = false
 
 function love.load()
     love.graphics.setLineStyle("rough")
@@ -14,11 +16,23 @@ function love.draw()
     -- love.graphics.draw(image, 100, 100)
 end
 
+function play1()
+    love.audio.play(test1)
+end
+
 function love.keypressed(key)
     if key == "f" then
         local isFullscreen = love.window.getFullscreen()
         love.window.setFullscreen(not isFullscreen, "desktop")
     elseif key == "escape" then
         love.event.quit()
+    elseif key == "space" then
+        if playing ~= true then
+            play1()
+            playing = true
+        else
+            love.audio.stop(test1)
+            playing = false
+        end
     end
 end
