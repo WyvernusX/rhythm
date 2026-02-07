@@ -9,7 +9,7 @@ function love.draw()
     love.window.setTitle("rhythm by wyv")
     love.graphics.setBackgroundColor(0.2, 0.2, 0.2)
     love.graphics.setColor(1, 1, 1)
-    love.graphics.line(20, 40, 20, 1000, 40, 1000, 40, 40, 20, 40)
+    love.graphics.line(40, 40, 40, 1000, 60, 1000, 60, 40, 40, 40)
     love.graphics.print("Press F to toggle fullscreen, ESC to quit.", 10, 10)
     -- love.graphics.draw(image, 100, 100)
 end
