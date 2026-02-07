@@ -1,7 +1,11 @@
 image = love.graphics.newImage("image.png")
 
 function love.draw()
-    love.graphics.draw(image, 1, 1)
+    love.window.setTitle("rhythm by wyv")
+    love.graphics.setBackgroundColor(0.2, 0.2, 0.2)
+    love.graphics.setColor(1, 1, 1)
+    love.graphics.print("Press F to toggle fullscreen, ESC to quit.", 10, 10)
+    love.graphics.draw(image, 100, 100)
 end
 
 function love.keypressed(key)

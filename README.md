@@ -1,2 +1,2 @@
 # rhythm
-click button go yipee wahoo
+basic rhythm game test :o
