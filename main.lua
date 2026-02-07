@@ -6,26 +6,32 @@ function love.load()
     love.graphics.setColor(1, 1, 1)
     main_theme = love.audio.newSource("main_theme.mp3", "static")
     love.window.setTitle("rhythm by wyv")
-    test1 = love.audio.newSource("music.mp3", "static")
     large = love.graphics.newFont("font1.otf", 100)
     medium = love.graphics.newFont("font1.otf", 80)
     small = love.graphics.newFont("font1.otf", 50)
     tiny = love.graphics.newFont("font1.otf", 30)
-end    
-
-function play1()
     love.audio.play(main_theme)
-end
+    love.audio.setVolume(0.25)
+    playing = true
+    click = love.audio.newSource("click.mp3", "static")
+    main_theme:setLooping(true)
+end 
 
 function love.draw()
-    play1()
+    love.graphics.setColor(1, 1, 1)
     love.graphics.setFont(medium)
     love.graphics.printf('rhythm', 10, 40, screenwidth, 'center')
     love.graphics.setFont(tiny)
     love.graphics.printf('by wyv', 10, 135, screenwidth, 'center')
+    love.graphics.setColor(1, 1, 1)
     love.graphics.rectangle("fill", x - 250, y - 100, 500, 100)
     love.graphics.rectangle("fill", x - 250, y + 20, 500, 100)
     love.graphics.rectangle("fill", x - 250, y + 140, 500, 100)
+    love.graphics.setColor(0, 0, 0)
+    love.graphics.setFont(small)
+    love.graphics.printf('play', x - 250, y - 75, 500, 'center')
+    love.graphics.printf('settings', x - 250, y + 45, 500, 'center')
+    love.graphics.printf('exit', x - 250, y + 165, 500, 'center')
 end
 
 function love.keypressed(key)
@@ -34,13 +40,29 @@ function love.keypressed(key)
         love.window.setFullscreen(not isFullscreen, "desktop")
     elseif key == "escape" then
         love.event.quit()
-    --[[ elseif key == "space" then
+    elseif key == "space" then
         if playing ~= true then
-            play1()
+            love.audio.play(main_theme)
             playing = true
         else
-            love.audio.stop(test1)
+            love.audio.pause(main_theme)
             playing = false
-        end --]]
+        end
+    end
+end
+
+function love.mousepressed(mouseX, mouseY, button, istouch)
+    if button == 1 then 
+        love.audio.play(click) 
+        if mouseX >= x - 250 and mouseX <= x + 250 and 
+           mouseY >= y - 100 and mouseY <= y then      
+            
+        elseif mouseX >= x - 250 and mouseX <= x + 250 and 
+               mouseY >= y + 20 and mouseY <= y + 120 then
+            
+        elseif mouseX >= x - 250 and mouseX <= x + 250 and 
+               mouseY >= y + 140 and mouseY <= y + 240 then
+            love.event.quit()
+        end
     end
 end
