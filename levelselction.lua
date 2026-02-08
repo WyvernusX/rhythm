@@ -1,4 +1,0 @@
-levelselection = {}
-
-
-return levelselection

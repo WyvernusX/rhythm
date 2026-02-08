@@ -58,7 +58,7 @@ function menu:mousepressed(mouseX, mouseY, button, istouch)
         love.audio.play(click) 
         if mouseX >= x - 250 and mouseX <= x + 250 and 
            mouseY >= y - 100 and mouseY <= y then      
-            statemanager.switch(require("game"))
+            statemanager.switch(require("levelselection"))
             main_theme:stop()
         elseif mouseX >= x - 250 and mouseX <= x + 250 and 
                mouseY >= y + 20 and mouseY <= y + 120 then
