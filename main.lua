@@ -4,6 +4,7 @@ local menu = require("menu")
 function love.load()
     love.window.setTitle("loading...")
     statemanager.switch(menu)
+    love.window.setFullscreen(not isFullscreen, "desktop")
 end
 
 function love.update(dt)

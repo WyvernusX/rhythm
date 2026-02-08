@@ -4,8 +4,6 @@ function menu:enter()
     screenwidth, screenheight = love.graphics.getDimensions()
     x = screenwidth / 2
     y = screenheight / 2
-    love.graphics.setBackgroundColor(0.2, 0.2, 0.2)
-    love.graphics.setColor(1, 1, 1)
     main_theme = love.audio.newSource("main_theme.mp3", "static")
     love.window.setTitle("rhythm by wyv")
     large = love.graphics.newFont("font1.otf", 100)
@@ -20,11 +18,16 @@ function menu:enter()
 end 
 
 function menu:draw()
+    local text = "by wyv"
+    local rotation = math.rad(-20)
+    local textWidth = tiny:getWidth(text)
+    local textHeight = tiny:getHeight()
     love.graphics.setColor(1, 1, 1)
+    love.graphics.setBackgroundColor(0.2, 0.2, 0.2)
     love.graphics.setFont(medium)
     love.graphics.printf('rhythm', 10, 40, screenwidth, 'center')
     love.graphics.setFont(tiny)
-    love.graphics.printf('by wyv', 10, 135, screenwidth, 'center')
+    love.graphics.print(text, x + 200, 160, rotation, 1, 1, textWidth / 2, textHeight / 2)
     love.graphics.setColor(1, 1, 1)
     love.graphics.rectangle("fill", x - 250, y - 100, 500, 100)
     love.graphics.rectangle("fill", x - 250, y + 20, 500, 100)
