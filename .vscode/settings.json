@@ -3,8 +3,11 @@
         "165",
         "istouch",
         "keypressed",
+        "levelselection",
         "mousepressed",
+        "newstate",
         "screenheight",
-        "screenwidth"
+        "screenwidth",
+        "statemanager"
     ]
 }
