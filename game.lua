@@ -1,6 +1,6 @@
 local game = {}
 
-test1 = love.audio.newSource("main_theme.mp3", "static")
+test1 = love.audio.newSource("assets/main_theme.mp3", "static")
 playing = false
 
 function game:enter()
@@ -21,7 +21,7 @@ function game:draw()
     love.window.setTitle("rhythm by wyv")
     love.graphics.setBackgroundColor(0.2, 0.2, 0.2)
     love.graphics.setColor(1, 1, 1)
-    love.graphics.rectangle("fill", 40, 40, 20, 500)
+    love.graphics.rectangle("fill", 100, 70, 20, 500)
     --love.graphics.line(40, 40, 40, 1000, 60, 1000, 60, 40, 40, 40)
     love.graphics.print("imagine dots here lol", 10, 10)
     -- love.graphics.draw(image, 100, 100)

@@ -1,20 +1,20 @@
 local menu = {}
-local cat = love.graphics.newImage("image.png")
+local cat = love.graphics.newImage("assets/image.png")
 
 function menu:enter()
     screenwidth, screenheight = love.graphics.getDimensions()
     x = screenwidth / 2
     y = screenheight / 2
-    main_theme = love.audio.newSource("main_theme.mp3", "static")
+    main_theme = love.audio.newSource("assets/main_theme.mp3", "static")
     love.window.setTitle("rhythm by wyv")
-    large = love.graphics.newFont("font1.otf", 100)
-    medium = love.graphics.newFont("font1.otf", 80)
-    small = love.graphics.newFont("font1.otf", 50)
-    tiny = love.graphics.newFont("font1.otf", 30)
+    large = love.graphics.newFont("assets/font1.otf", 100)
+    medium = love.graphics.newFont("assets/font1.otf", 80)
+    small = love.graphics.newFont("assets/font1.otf", 50)
+    tiny = love.graphics.newFont("assets/font1.otf", 30)
     love.audio.play(main_theme)
     love.audio.setVolume(0.25)
     playing = true
-    click = love.audio.newSource("click.mp3", "static")
+    click = love.audio.newSource("assets/click.mp3", "static")
     main_theme:setLooping(true)
 end 
 

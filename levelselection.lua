@@ -1,7 +1,7 @@
 levelselection = {}
 
 function levelselection:enter()
-    click = love.audio.newSource("click.mp3", "static")
+    click = love.audio.newSource("assets/click.mp3", "static")
     love.graphics.setLineStyle("rough")
     love.graphics.setColor(0.2, 0.2, 0.2)
     love.graphics.setFont(small)
