@@ -8,6 +8,14 @@ function game:enter()
     love.graphics.setLineWidth(20)
 end
 
+function newnotefirst()
+    -- code to create a new note
+end
+
+function newnotesecond()
+    -- code to select a note
+end
+
 function game:draw()
     love.graphics.setFont(tiny)
     love.window.setTitle("rhythm by wyv")

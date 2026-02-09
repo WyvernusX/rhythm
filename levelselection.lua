@@ -50,6 +50,7 @@ function levelselection:keypressed(key)
     elseif key == "enter" then
         statemanager.switch(require("game"))
         statemanager.pop(require("levelselection"))
+        statemanager.pop(require("menu"))
     elseif key == "f" then
         local isFullscreen = love.window.getFullscreen()
         love.window.setFullscreen(not isFullscreen, "desktop")
