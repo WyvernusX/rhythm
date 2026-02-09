@@ -32,8 +32,8 @@ function levelselection:mousepressed(mouseX, mouseY, button, istouch)
     click:play()
     if button == 1 then
         if mouseX >= screenwidth - 500 and mouseX <= screenwidth and mouseY >= 100 and mouseY <= 200 then
-            statemanager.pop(require("levelselection"))
             statemanager.pop(require("menu"))
+            statemanager.pop(require("levelselection"))
             statemanager.switch(require("game"))
         end
     end
