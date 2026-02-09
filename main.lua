@@ -1,5 +1,6 @@
 statemanager = require("statemanager")
 local menu = require("menu")
+local cat = love.graphics.newImage("assets/image.png")
 
 function love.load()
     love.window.setTitle("loading...")

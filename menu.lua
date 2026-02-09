@@ -69,6 +69,7 @@ function menu:mousepressed(mouseX, mouseY, button, istouch)
                mouseY >= y + 20 and mouseY <= y + 120 then
             statemanager.pop(require("menu"))
             statemanager.switch(require("settings"))
+            main_theme:stop()
         elseif mouseX >= x - 250 and mouseX <= x + 250 and 
                mouseY >= y + 140 and mouseY <= y + 240 then
             love.event.quit()
