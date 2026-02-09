@@ -1,10 +1,6 @@
 statemanager = require("statemanager")
 local menu = require("menu")
 
-function love.window()
-    statemanager.window()
-end
-
 function love.load()
     love.window.setTitle("loading...")
     statemanager.switch(menu)

@@ -63,9 +63,9 @@ function menu:mousepressed(mouseX, mouseY, button, istouch)
            mouseY >= y - 100 and mouseY <= y then      
             statemanager.switch(require("levelselection"))
             main_theme:stop()
-        elseif mouseX >= x - 250 and mouseX <= x + 250 and 
+        elseif mouseX >= x - 250 and mouseX <= x + 250 and
                mouseY >= y + 20 and mouseY <= y + 120 then
-            
+            --add settings menu here
         elseif mouseX >= x - 250 and mouseX <= x + 250 and 
                mouseY >= y + 140 and mouseY <= y + 240 then
             love.event.quit()
