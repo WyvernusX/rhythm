@@ -36,7 +36,7 @@ function game:update(dt)
         note.xc = note.xc - (self.speed * dt)
     end
 
-    for i = #self.notes, 1, -1 do
+    for i = #self.notes, 1, -1 do --the missed note remove here!
         if self.notes[i].xc < -50 then
             table.remove(self.notes, i)
             print("Missed note (went off screen)")
@@ -102,11 +102,11 @@ function game:keypressed(key)
 
 
         if closestIndex ~= -1 and closestDist <= hitWindow then
-            print("HIT! Accuracy: " .. math.floor(closestDist) .. "px")
+            --success!!
             table.remove(self.notes, closestIndex)
             self:spawnNote("random", 0) 
         else
-            print("MISS! Too early/late. Distance: " .. math.floor(closestDist))
+            --miss go here
         end
     end
 end
