@@ -9,6 +9,10 @@ end
 function pause:keypressed(key)
     if key == "escape" then
         love.event.quit()
+    elseif key == "return" then
+        statemanager.pop(require("pause"))
+        statemanager.switch(require("game"))
+        vah:play()
     end
 end
 

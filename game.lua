@@ -1,7 +1,6 @@
 local game = {}
 
 test1 = love.audio.newSource("assets/main_theme.mp3", "static")
-playing = false
 
 function game:enter()
     self.notes = {}
@@ -12,23 +11,28 @@ function game:enter()
     love.graphics.setLineStyle("rough")
     love.graphics.setLineWidth(20)
     love.window.setTitle("rhythm by wyv")
+
+    local chartData = require("songs/song1")
+    self.bpm = chartData.bpm
+    self.chart = chartData.notes
+    self.chartIndex = 1
+    self.secondsPerBeat = 60/ self.bpm
     
-    self.speed = 200
+    self.speed = 400
     self.line_x = 110 
     self.spawn_x = screenwidth + 100
 
     local distance = self.spawn_x - self.line_x
     self.travelTime = distance / self.speed
-    
-    self.chart = require("songs/song1") 
-    self.chartIndex = 1 
-    self.musicTime = 0  
+    self.timer = 0
 end
 
 function game:spawnNote(type, offset)
+    local safeOffset = offset or 0
+    
     local note = {
        xc = self.spawn_x, 
-       yc = self.centerY + offset, 
+       yc = self.centerY + safeOffset,
        type = type,
        active = true 
     }
@@ -36,31 +40,30 @@ function game:spawnNote(type, offset)
 end
 
 function game:update(dt)
-    if playing then 
-        self.musicTime = test1:tell()
-    end    
+
+    self.timer = self.timer + dt
 
     while self.chartIndex <= #self.chart do
         local nextNote = self.chart[self.chartIndex]
-        
-        local spawnTime = nextNote.time - self.travelTime
+        local noteTime = nextNote.time * self.secondsPerBeat
 
-        if self.musicTime >= spawnTime then
-            self:spawnNote(nextNote.type, 0)   
+        local spawnTime = noteTime - self.travelTime
+        if self.timer >= spawnTime then
+            self:spawnNote(nextNote.type, nextNote.offset)
             self.chartIndex = self.chartIndex + 1
         else
             break
         end
     end
 
-    for i, note in ipairs(self.notes) do --speed
+    for i, note in ipairs(self.notes) do 
         note.xc = note.xc - (self.speed * dt)
     end
 
-    for i = #self.notes, 1, -1 do --remove missed notes
+    for i = #self.notes, 1, -1 do 
         if self.notes[i].xc < -50 then
             table.remove(self.notes, i)
-            print("Missed note (went off screen)")
+            --miss
         end
     end
 end
@@ -73,22 +76,18 @@ function game:draw()
     love.graphics.rectangle("fill", 100, screenheight / 2 - 250, 20, 500)
     love.graphics.print("f = red, j = blue", 10, 10)
     
-    for _, note in ipairs(self.notes) do --note maker
+    for _, note in ipairs(self.notes) do 
         if note.active then
             if note.type == "normalf" then
-                love.graphics.setColor(1, 0.5, 0.5) --red
-                love.graphics.circle("fill", note.xc, note.yc, 30) 
+                love.graphics.setColor(1, 0.5, 0.5) -- red
             elseif note.type == "normalj" then
-                love.graphics.setColor(0.5, 0.5, 1) --blue
-                love.graphics.circle("fill", note.xc, note.yc, 30) 
+                love.graphics.setColor(0.5, 0.5, 1) -- blue
             end
+            
+            love.graphics.circle("fill", note.xc, note.yc, 30) 
         end
     end
     love.graphics.setColor(1, 1, 1)
-end
-
-function play1()
-    love.audio.play(test1)
 end
 
 function game:checkHit(keyType)
@@ -109,9 +108,9 @@ function game:checkHit(keyType)
 
     if closestIndex ~= -1 and closestDist <= hitWindow then
         table.remove(self.notes, closestIndex)
-        print("HIT " .. keyType)
+        --hit
     else
-        print("MISS " .. keyType)
+        --miss
     end
 end
 
@@ -123,6 +122,7 @@ function game:keypressed(key)
     elseif key == "escape" then
         if statemanager then
             statemanager.pop() 
+            vah:stop()
             statemanager.switch(require("pause"))
         end
         
