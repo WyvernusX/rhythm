@@ -1,5 +1,7 @@
 local settings = {}
 setting_music = love.audio.newSource("assets/settings.mp3", "static")
+setting_music:setLooping(true)
+setting_music:play()
 
 function settings:draw()
     love.graphics.setColor(0.2, 0.2, 0.2)
