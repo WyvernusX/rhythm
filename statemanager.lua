@@ -2,7 +2,6 @@ local statemanager = {}
 local states = {}
 
 function statemanager.switch(state) 
-    -- 1. Exit old state
     if states[#states] and states[#states].exit then
         states[#states]:exit()
     end
@@ -27,7 +26,6 @@ end
 
 function statemanager.draw()
     for _, state in ipairs(states) do
-        -- Check if draw exists before calling it to be safe
         if state.draw then state:draw() end
     end
 end

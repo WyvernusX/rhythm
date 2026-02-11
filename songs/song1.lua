@@ -70,7 +70,29 @@ return { --f is red, j is blue
         {time = 67.5, offset = 140, type = "normalf"},
         {time = 68, offset = 80, type = "normalf"},
         {time = 68.5, offset = 20, type = "normalf"}, --another stair after this one
-        
+        {time = 70, offset = 100, type = "normalj"},
+        {time = 70.5, offset = 20, type = "normalj"},
+        {time = 71, offset = -40, type = "normalj"},
+        {time = 71.5, offset = -100, type = "normalj"},
+        {time = 72, offset = -40, type = "normalj"},
+        {time = 72.5, offset = -120, type = "normalj"},
+        {time = 73, offset = -200, type = "normalj"},
+        {time = 73.5, offset = -140, type = "normalf"},
+        {time = 74, offset = -80, type = "normalf"},
+        {time = 74.5, offset = -20, type = "normalf"},
+        {time = 75, offset = 40, type = "normalf"},
+        {time = 75.5, offset = 100, type = "normalf"},
+        {time = 76, offset = 20, type = "normalf"},
+        {time = 76.5, offset = 200, type = "normalf"},
+        {time = 76.5, offset = 140, type = "normalj"},
+        {time = 77, offset = 80, type = "normalf"}, --doubles
+        {time = 77, offset = 20, type = "normalj"},
+        {time = 78, offset = -40, type = "normalf"},
+        {time = 78, offset = -100, type = "normalj"},
+        {time = 79, offset = -150, type = "normalf"},
+        {time = 79, offset = -200, type = "normalj"},
+        {time = 80, offset = 140, type = "normalf"}, --AHOY MATEY
+        {time = 80, offset = 200, type = "normalj"}, --end of hard part i think
     }
 }
 
