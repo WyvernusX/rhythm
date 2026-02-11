@@ -4,32 +4,77 @@ vah:play()
 return { --f is red, j is blue
     bpm = 150,
     notes = {
-        {time = 11.5, offset = 200, type = "normalj"},
-        {time = 12.5, offset = 200, type = "normalj"},
-        {time = 13.5, offset = 200, type = "normalj"},
-        {time = 15, offset = 200, type = "normalj"},
-        {time = 16, offset = 200, type = "normalj"},
-        {time = 17.5, offset = 200, type = "normalj"},
-        {time = 18.5, offset = 200, type = "normalj"},
+        {time = 11.5, offset = 200, type = "speciald"},
+        {time = 12.5, offset = 200, type = "speciald"},
+        {time = 13.5, offset = 200, type = "speciald"},
+        {time = 15, offset = 200, type = "speciald"},
+        {time = 16, offset = 200, type = "speciald"},
+        {time = 17.5, offset = 200, type = "speciald"},
+        {time = 18.5, offset = 200, type = "speciald"},
         {time = 17, offset = -200, type = "normalf"},
         {time = 20, offset = -80 , type = "normalf"},
         {time = 21, offset = -140 , type = "normalf"},
         {time = 22, offset = -80, type = "normalf"},
-        {time = 24, offset = -200, type = "normalj"}, --potenital specials these two below!!
-        {time = 25, offset = -140, type = "normalj"},
+        {time = 25, offset = -200, type = "specialk"}, --potential specials these two below!!
+        {time = 26, offset = -140, type = "specialk"},
         {time = 27, offset = -80, type = "normalf"},
         {time = 28, offset = -140, type = "normalf"},
         {time = 29, offset = -80, type = "normalf"},
         {time = 30, offset = -140, type = "normalf"},
-        {time = 31, offset = -80, type = "normalj"},
-        {time = 31.5, offset = -140, type = "normalj"},
-        {time = 32.5, offset = -80, type = "normalj"},
-
-
+        {time = 32, offset = -80, type = "normalj"},
+        {time = 33, offset = -140, type = "normalj"},
+        {time = 33.6, offset = -80, type = "normalj"},
+        {time = 34, offset = -20, type = "normalj"},
+        {time = 34.5, offset = -140, type = "normalj"},
+        {time = 37, offset = -80, type = "normalf"},
+        {time = 38, offset = -140, type = "normalf"},
+        {time = 39, offset = -140, type = "normalf"},
+        {time = 39.5, offset = -80, type = "normalf"},
+        {time = 40, offset = -20, type = "normalf"},
+        {time = 40.5, offset = 40, type = "normalf"},
+        {time = 41, offset = 60, type = "normalf"},
+        {time = 41.5, offset = 40, type = "normalf"},
+        {time = 49, offset = -80, type = "normalj"},
+        {time = 49.5, offset = -140, type = "normalj"},
+        {time = 50, offset = -80, type = "normalj"},
+        {time = 50.5, offset = -20, type = "normalf"},
+        {time = 51, offset = 40, type = "normalf"},
+        {time = 51.5, offset = -20, type = "normalf"},
+        {time = 54, offset = -80, type = "normalj"},
+        {time = 54.5, offset = -140, type = "normalj"},
+        {time = 55, offset = -80, type = "normalj"},
+        {time = 55.5, offset = -20, type = "normalf"},
+        {time = 56, offset = 40, type = "normalf"},
+        {time = 56.5, offset = -20, type = "normalf"},
+        {time = 57, offset = -80, type = "normalj"},
+        {time = 57.5, offset = -140, type = "normalj"},
+        {time = 58, offset = -200, type = "normalj"},
+        {time = 58.5, offset = -140, type = "normalj"},
+        {time = 59, offset = -80, type = "normalj"},
+        {time = 59.5, offset = -140, type = "normalj"},
+        {time = 60, offset = -80, type = "normalf"},
+        {time = 60.5, offset = -140, type = "normalf"},
+        {time = 61, offset = -200, type = "normalf"},
+        {time = 61.5, offset = -140, type = "normalf"},
+        {time = 62, offset = -200, type = "normalf"}, --hard part begins here
+        {time = 62.5, offset = -140, type = "normalj"}, 
+        {time = 63, offset = -80, type = "normalj"},
+        {time = 63.5, offset = -20, type = "normalj"},
+        {time = 64, offset = 40, type = "normalj"},
+        {time = 64.5, offset = 100, type = "normalj"},
+        {time = 65, offset = 20, type = "normalj"},
+        {time = 65.5, offset = -40, type = "normalj"},
+        {time = 66, offset = -100, type = "normalj"},
+        {time = 66.5, offset = -140, type = "normalf"},
+        {time = 67, offset = 200, type = "normalf"},
+        {time = 67.5, offset = 140, type = "normalf"},
+        {time = 68, offset = 80, type = "normalf"},
+        {time = 68.5, offset = 20, type = "normalf"}, --another stair after this one
+        
     }
 }
 
 
 --negative is up, down is positive
 --2.5 beats per second :o
---collumn things heres
+--column things heres

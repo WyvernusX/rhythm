@@ -1,4 +1,5 @@
 local settings = {}
+setting_music = love.audio.newSource("assets/settings.mp3", "static")
 
 function settings:draw()
     love.graphics.setColor(0.2, 0.2, 0.2)
@@ -9,6 +10,7 @@ function settings:keypressed(key)
     if key == "escape" then
         statemanager.pop(require("settings"))
         statemanager.switch(require("menu"))
+        setting_music:stop()
     elseif key == "f" then
         local isFullscreen = love.window.getFullscreen()
         love.window.setFullscreen(not isFullscreen, "desktop")

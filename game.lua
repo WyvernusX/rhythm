@@ -74,7 +74,7 @@ function game:draw()
     
     love.graphics.setColor(1, 1, 1)
     love.graphics.rectangle("fill", 100, screenheight / 2 - 250, 20, 500)
-    love.graphics.print("f = red, j = blue", 10, 10)
+    love.graphics.print("d = green, f = red, j = blue, k = yellow", 10, 10)
     
     for _, note in ipairs(self.notes) do 
         if note.active then
@@ -82,6 +82,10 @@ function game:draw()
                 love.graphics.setColor(1, 0.5, 0.5) -- red
             elseif note.type == "normalj" then
                 love.graphics.setColor(0.5, 0.5, 1) -- blue
+            elseif note.type == "speciald" then
+                love.graphics.setColor(0.5, 1, 0.5) -- green
+            elseif note.type == "specialk" then
+                love.graphics.setColor(1, 1, 0.5) -- yellow
             end
             
             love.graphics.circle("fill", note.xc, note.yc, 30) 
@@ -140,6 +144,10 @@ function game:keypressed(key)
         self:checkHit("normalf")
     elseif key == "j" then
         self:checkHit("normalj")
+    elseif key == "d" then
+        self:checkHit("speciald")
+    elseif key == "k" then
+        self:checkHit("specialk")
     end
 end
 
