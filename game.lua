@@ -87,7 +87,6 @@ function game:draw()
             elseif note.type == "specialk" then
                 love.graphics.setColor(1, 1, 0.5) -- yellow
             end
-            
             love.graphics.circle("fill", note.xc, note.yc, 30) 
         end
     end

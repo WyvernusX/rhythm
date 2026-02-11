@@ -10,8 +10,8 @@ return { --f is red, j is blue
         {time = 15, offset = 200, type = "speciald"},
         {time = 16, offset = 200, type = "speciald"},
         {time = 17.5, offset = 200, type = "speciald"},
-        {time = 18.5, offset = 200, type = "speciald"},
-        {time = 17, offset = -200, type = "normalf"},
+        {time = 18.5, offset = 200, type = "speciald"}, 
+        {time = 17, offset = -200, type = "normalf"}, --real begins here
         {time = 20, offset = -80 , type = "normalf"},
         {time = 21, offset = -140 , type = "normalf"},
         {time = 22, offset = -80, type = "normalf"},
@@ -93,6 +93,21 @@ return { --f is red, j is blue
         {time = 79, offset = -200, type = "normalj"},
         {time = 80, offset = 140, type = "normalf"}, --AHOY MATEY
         {time = 80, offset = 200, type = "normalj"}, --end of hard part i think
+        {time = 82, offset = 200, type = "specialk"},
+        {time = 83, offset = 200, type = "specialk"},
+        {time = 84, offset = 200, type = "specialk"},
+        {time = 85, offset = 200, type = "specialk"},
+        {time = 86.5, offset = 200, type = "specialk"},
+        {time = 88, offset = 200, type = "specialk"},
+        {time = 89.5, offset = 200, type = "specialk"},
+        {time = 91, offset = 200, type = "specialk"},
+        {time = 92.5, offset = 200, type = "specialk"},
+        {time = 94, offset = 200, type = "specialk"},
+        {time = 95.5, offset = 200, type = "specialk"},
+        {time = 95.5, offset = -200, type = "normalj"}, -- 2nd loop
+        {time = 97, offset = -80 , type = "normalj"},
+        {time = 98, offset = -140 , type = "normalj"},
+        {time = 99, offset = -80, type = "normalj"},
     }
 }
 
