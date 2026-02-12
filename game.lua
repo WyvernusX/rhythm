@@ -1,35 +1,35 @@
 local game = {}
 
-test1 = love.audio.newSource("assets/main_theme.mp3", "static")
-
 function game:enter()
     self.notes = {}
     screenwidth, screenheight = love.graphics.getDimensions()
-    
+
     self.centerY = screenheight / 2 
-    
     love.graphics.setLineStyle("rough")
     love.graphics.setLineWidth(20)
     love.window.setTitle("rhythm by wyv")
-
+    
     local chartData = require("songs/song1")
     self.bpm = chartData.bpm
     self.chart = chartData.notes
     self.chartIndex = 1
-    self.secondsPerBeat = 60/ self.bpm
+    self.secondsPerBeat = 60 / self.bpm
     
     self.speed = 400
     self.line_x = 110 
     self.spawn_x = screenwidth + 100
-
+    
     local distance = self.spawn_x - self.line_x
     self.travelTime = distance / self.speed
-    self.timer = 0
+    
+    -- Start timer in negatives to allow notes to travel before music starts
+    self.timer = -self.travelTime
+    
+    self.musicStarted = false
 end
 
 function game:spawnNote(type, offset)
     local safeOffset = offset or 0
-    
     local note = {
        xc = self.spawn_x, 
        yc = self.centerY + safeOffset,
@@ -40,14 +40,20 @@ function game:spawnNote(type, offset)
 end
 
 function game:update(dt)
-
-    self.timer = self.timer + dt
+    if not self.musicStarted then
+        self.timer = self.timer + dt
+        if self.timer >= 0 then
+            self.musicStarted = true
+        end
+    else
+        self.timer = vah:tell() -- Use music time for synchronization
+    end
 
     while self.chartIndex <= #self.chart do
         local nextNote = self.chart[self.chartIndex]
         local noteTime = nextNote.time * self.secondsPerBeat
-
         local spawnTime = noteTime - self.travelTime
+        
         if self.timer >= spawnTime then
             self:spawnNote(nextNote.type, nextNote.offset)
             self.chartIndex = self.chartIndex + 1
@@ -63,7 +69,6 @@ function game:update(dt)
     for i = #self.notes, 1, -1 do 
         if self.notes[i].xc < -50 then
             table.remove(self.notes, i)
-            --miss
         end
     end
 end
@@ -111,9 +116,6 @@ function game:checkHit(keyType)
 
     if closestIndex ~= -1 and closestDist <= hitWindow then
         table.remove(self.notes, closestIndex)
-        --hit
-    else
-        --miss
     end
 end
 
@@ -125,21 +127,11 @@ function game:keypressed(key)
     elseif key == "escape" then
         if statemanager then
             statemanager.pop() 
-            vah:stop()
+            love.audio.stop(vah)
             statemanager.switch(require("pause"))
         end
-        
-    elseif key == "space" then
-        if playing ~= true then
-            play1()
-            playing = true
-        else
-            love.audio.stop(test1)
-            playing = false
-        end
-    end
 
-    if key == "f" then
+    elseif key == "f" then
         self:checkHit("normalf")
     elseif key == "j" then
         self:checkHit("normalj")
