@@ -2,6 +2,7 @@ local menu = {}
 local cat = love.graphics.newImage("assets/image.png")
 
 function menu:enter()
+    love.window.setIcon(icon)
     screenwidth, screenheight = love.graphics.getDimensions()
     x = screenwidth / 2
     y = screenheight / 2

@@ -86,8 +86,6 @@ function game:draw()
                     love.graphics.setColor(1, 1, 0.5) -- yellow
                 end
                 love.graphics.circle("fill", note.xc, note.yc, 30) 
-            elseif 
-                
             end
         end
     end

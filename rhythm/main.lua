@@ -1,4 +1,6 @@
 statemanager = require("statemanager")
+icon = love.image.newImageData("assets/rhythm.png")
+love.window.setIcon(icon)
 local menu = require("menu")
 local cat = love.graphics.newImage("assets/image.png")
 
