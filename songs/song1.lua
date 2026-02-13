@@ -124,6 +124,17 @@ return { --f is red, j is blue
         {time = 116.5, offset = 40, type = "normalj"},
         {time = 117, offset = 60, type = "normalj"},
         {time = 117.5, offset = 40, type = "normalj"},
+        {time = 125, offset = 200, type = "speciald"},  --doubles!!
+        {time = 125, offset = 140, type = "specialk"},
+        {time = 126.5, offset = 200, type = "speciald"}, 
+        {time = 126.5, offset = 140, type = "specialk"},
+        {time = 128, offset = 200, type = "speciald"}, 
+        {time = 128, offset = 140, type = "specialk"},
+        {time = 129.5, offset = 200, type = "speciald"}, 
+        {time = 129.5, offset = 140, type = "specialk"},
+        {time = 131, offset = 200, type = "speciald"},
+        {time = 131, offset = 140, type = "specialk"}, --3rd repeat bruh
+        
     }
 }
 

@@ -20,7 +20,7 @@ function game:enter()
     self.musicStarted = false
 end
 
-function game:spawnNote(type, offset)
+function game:spawnNote(type, offset, duration)
     local safeOffset = offset or 0
     local note = {
        xc = self.spawn_x, 
@@ -47,7 +47,7 @@ function game:update(dt)
         local spawnTime = noteTime - self.travelTime
         
         if self.timer >= spawnTime then
-            self:spawnNote(nextNote.type, nextNote.offset)
+            self:spawnNote(nextNote.type, nextNote.offset, nextNote.duration)
             self.chartIndex = self.chartIndex + 1
         else
             break
@@ -75,28 +75,32 @@ function game:draw()
     
     for _, note in ipairs(self.notes) do 
         if note.active then
-            if note.type == "normalf" then
-                love.graphics.setColor(1, 0.5, 0.5) -- red
-            elseif note.type == "normalj" then
-                love.graphics.setColor(0.5, 0.5, 1) -- blue
-            elseif note.type == "speciald" then
-                love.graphics.setColor(0.5, 1, 0.5) -- green
-            elseif note.type == "specialk" then
-                love.graphics.setColor(1, 1, 0.5) -- yellow
+            if note.type ~= hold then 
+                if note.type == "normalf" then
+                    love.graphics.setColor(1, 0.5, 0.5) -- red
+                elseif note.type == "normalj" then
+                    love.graphics.setColor(0.5, 0.5, 1) -- blue
+                elseif note.type == "speciald" then
+                    love.graphics.setColor(0.5, 1, 0.5) -- green
+                elseif note.type == "specialk" then
+                    love.graphics.setColor(1, 1, 0.5) -- yellow
+                end
+                love.graphics.circle("fill", note.xc, note.yc, 30) 
+            elseif 
+                
             end
-            love.graphics.circle("fill", note.xc, note.yc, 30) 
         end
     end
     love.graphics.setColor(1, 1, 1)
 end
 
-function game:checkHit(keyType) --eventually modify this to be more generous
+function game:checkHit(keyType)
     local closestDist = 999999
     local closestIndex = -1 -- range is ~900 or 800 idk twin
     if self.speed >= 850 then --if u delete ts then ts breaks
         hitWindow = 150 
     else
-         hitWindow = 50 
+         hitWindow = 50 --add hold notes!! :3 (if youre seeing this youre weird)
     end
 
     for i, note in ipairs(self.notes) do

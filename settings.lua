@@ -5,7 +5,7 @@ setting_music:play()
 
 function settings:draw()
     love.graphics.setColor(0.2, 0.2, 0.2)
-    love.graphics.rectangle("fill", 0, 0, love.graphics.getWidth(), love.graphics.getHeight())
+    love.graphics.rectangle("fill", 0, 0, love.graphics.getWidth(), love.graphics.getHeight()) --SETTINGS REWORK COMING SOON!!!!!!
 end
 
 function settings:keypressed(key) 
