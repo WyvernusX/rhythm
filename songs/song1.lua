@@ -118,6 +118,12 @@ return { --f is red, j is blue
         {time = 110, offset = -140, type = "normalj"},
         {time = 112, offset = -140, type = "normalf"},
         {time = 112.5, offset = -80, type = "normalf"},
+        {time = 115, offset = -140, type = "normalj"},
+        {time = 115.5, offset = -80, type = "normalj"},
+        {time = 116, offset = -20, type = "normalj"},
+        {time = 116.5, offset = 40, type = "normalj"},
+        {time = 117, offset = 60, type = "normalj"},
+        {time = 117.5, offset = 40, type = "normalj"},
     }
 }
 

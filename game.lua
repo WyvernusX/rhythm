@@ -3,28 +3,20 @@ local game = {}
 function game:enter()
     self.notes = {}
     screenwidth, screenheight = love.graphics.getDimensions()
-
     self.centerY = screenheight / 2 
-    love.graphics.setLineStyle("rough")
-    love.graphics.setLineWidth(20)
-    love.window.setTitle("rhythm by wyv")
-    
     local chartData = require("songs/song1")
-    self.bpm = chartData.bpm
+    
+    self.bpm = chartData.bpm 
     self.chart = chartData.notes
     self.chartIndex = 1
     self.secondsPerBeat = 60 / self.bpm
-    
-    self.speed = 400
     self.line_x = 110 
     self.spawn_x = screenwidth + 100
-    
     local distance = self.spawn_x - self.line_x
-    self.travelTime = distance / self.speed
-    
-    -- Start timer in negatives to allow notes to travel before music starts
+    local approachTime = 2.0  -- base speed
+    self.speed = distance / approachTime --scroll speed
+    self.travelTime = distance / self.speed --dont touch this or your die
     self.timer = -self.travelTime
-    
     self.musicStarted = false
 end
 
@@ -46,7 +38,7 @@ function game:update(dt)
             self.musicStarted = true
         end
     else
-        self.timer = vah:tell() -- Use music time for synchronization
+        self.timer = vah:tell() 
     end
 
     while self.chartIndex <= #self.chart do
@@ -98,10 +90,14 @@ function game:draw()
     love.graphics.setColor(1, 1, 1)
 end
 
-function game:checkHit(keyType)
+function game:checkHit(keyType) --eventually modify this to be more generous
     local closestDist = 999999
-    local closestIndex = -1
-    local hitWindow = 50 
+    local closestIndex = -1 -- range is ~900 or 800 idk twin
+    if self.speed >= 850 then --if u delete ts then ts breaks
+        hitWindow = 150 
+    else
+         hitWindow = 50 
+    end
 
     for i, note in ipairs(self.notes) do
         if note.type == keyType then
@@ -115,7 +111,7 @@ function game:checkHit(keyType)
     end
 
     if closestIndex ~= -1 and closestDist <= hitWindow then
-        table.remove(self.notes, closestIndex)
+        table.remove(self.notes, closestIndex) 
     end
 end
 
