@@ -1,5 +1,5 @@
-vah = love.audio.newSource("assets/song1.mp3", "static")
-vah:play()
+song = love.audio.newSource("assets/song1.mp3", "static")
+song:play()
 
 return { --f is red, j is blue
     bpm = 150,

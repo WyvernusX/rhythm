@@ -38,7 +38,7 @@ function game:update(dt)
             self.musicStarted = true
         end
     else
-        self.timer = vah:tell() 
+        self.timer = song:tell() 
     end
 
     while self.chartIndex <= #self.chart do
@@ -125,7 +125,7 @@ function game:keypressed(key)
     elseif key == "escape" then
         if statemanager then
             statemanager.pop() 
-            love.audio.stop(vah)
+            love.audio.stop(song)
             statemanager.switch(require("pause"))
         end
 
