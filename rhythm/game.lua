@@ -137,9 +137,9 @@ function game:checkHit(keyType)
     if closestIndex ~= -1 and closestDist <= hitWindow then --get rid of old notes
         local hitNote = self.notes[closestIndex]
         
-        if note.type == "holdf" or note.type == "holdj" then
+        if hitNote.type == "holdf" or hitNote.type == "holdj" then
             self.isHeld = true
-            note.xc = self.line_x
+            hitNote.xc = self.line_x
 
         else
             table.remove(self.notes, closestIndex) 
