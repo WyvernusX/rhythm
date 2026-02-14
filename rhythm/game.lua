@@ -18,15 +18,18 @@ function game:enter()
     self.travelTime = distance / self.speed --dont touch this or your die
     self.timer = -self.travelTime
     self.musicStarted = false
+    self.duration = 0
+    self.isHeld = false
 end
 
-function game:spawnNote(type, offset, duration)
+function game:spawnNote(type, offset, note_duration)
     local safeOffset = offset or 0
     local note = {
        xc = self.spawn_x, 
        yc = self.centerY + safeOffset,
        type = type,
-       active = true 
+       note_duration = hold_time,
+       active = true -- add long note tails eventually
     }
     table.insert(self.notes, note)
 end
@@ -63,6 +66,12 @@ function game:update(dt)
             table.remove(self.notes, i)
         end
     end
+
+    if love.keyboard.isDown("f", "j") then
+        self.duration = self.duration + dt
+    else 
+        self.duration = 0
+    end
 end
 
 function game:draw()
@@ -72,20 +81,34 @@ function game:draw()
     love.graphics.setColor(1, 1, 1)
     love.graphics.rectangle("fill", 100, screenheight / 2 - 250, 20, 500)
     love.graphics.print("d = green, f = red, j = blue, k = yellow", 10, 10)
+    love.graphics.print(self.duration, 10, 50)
     
     for _, note in ipairs(self.notes) do 
         if note.active then
-            if note.type ~= hold then 
+            if note.type ~= "holdf" and note.type ~= "holdj" then 
                 if note.type == "normalf" then
                     love.graphics.setColor(1, 0.5, 0.5) -- red
+                    love.graphics.circle("fill", note.xc, note.yc, 30) 
                 elseif note.type == "normalj" then
                     love.graphics.setColor(0.5, 0.5, 1) -- blue
+                    love.graphics.circle("fill", note.xc, note.yc, 30) 
                 elseif note.type == "speciald" then
                     love.graphics.setColor(0.5, 1, 0.5) -- green
+                    love.graphics.circle("fill", note.xc, note.yc, 30) 
                 elseif note.type == "specialk" then
                     love.graphics.setColor(1, 1, 0.5) -- yellow
+                    love.graphics.circle("fill", note.xc, note.yc, 30) 
                 end
-                love.graphics.circle("fill", note.xc, note.yc, 30) 
+            elseif note.type == "holdf" or note.type == "holdj" then
+                if note.type == "holdf" then
+                    love.graphics.setColor(1, 0.5, 0.5) -- red
+                    love.graphics.circle("fill", note.xc, note.yc, 30) 
+                    --love.graphics.circle("line", note.xc, note.yc + note.hold_time * 2.5, 30) 
+                elseif note.type == "holdj" then
+                    love.graphics.setColor(0.5, 0.5, 1) -- blue
+                    love.graphics.circle("fill", note.xc, note.yc, 30) 
+                    --love.graphics.circle("line", note.xc, note.yc + note.hold_time * 2.5, 30)  --EVENTUALLY DIFFERENTIATE BETWEEN THE HOLD NAMES!!!!
+                end
             end
         end
     end
@@ -94,17 +117,16 @@ end
 
 function game:checkHit(keyType)
     local closestDist = 999999
-    local closestIndex = -1 -- range is ~900 or 800 idk twin
+    local closestIndex = -1 -- range is ~900 or 800 idk twin, add formula maybe??
     if self.speed >= 850 then --if u delete ts then ts breaks
         hitWindow = 150 
     else
-         hitWindow = 50 --add hold notes!! :3 (if youre seeing this youre weird)
+         hitWindow = 50 
     end
 
     for i, note in ipairs(self.notes) do
         if note.type == keyType then
             local dist = math.abs(note.xc - self.line_x)
-            
             if dist < closestDist then
                 closestDist = dist
                 closestIndex = i
@@ -112,8 +134,16 @@ function game:checkHit(keyType)
         end
     end
 
-    if closestIndex ~= -1 and closestDist <= hitWindow then
-        table.remove(self.notes, closestIndex) 
+    if closestIndex ~= -1 and closestDist <= hitWindow then --get rid of old notes
+        local hitNote = self.notes[closestIndex]
+        
+        if note.type == "holdf" or note.type == "holdj" then
+            self.isHeld = true
+            note.xc = self.line_x
+
+        else
+            table.remove(self.notes, closestIndex) 
+        end
     end
 end
 
@@ -127,8 +157,7 @@ function game:keypressed(key)
             statemanager.pop() 
             love.audio.stop(song)
             statemanager.switch(require("pause"))
-        end
-
+        end 
     elseif key == "f" then
         self:checkHit("normalf")
     elseif key == "j" then

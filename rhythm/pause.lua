@@ -15,7 +15,7 @@ function pause:keypressed(key)
     elseif key == "return" then
         statemanager.pop(require("pause"))
         statemanager.switch(require("game"))
-        vah:play()
+        song:play()
     end
 end
 
