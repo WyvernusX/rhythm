@@ -140,7 +140,10 @@ function game:checkHit(keyType)
         if hitNote.type == "holdf" or hitNote.type == "holdj" then
             self.isHeld = true
             hitNote.xc = self.line_x
-
+            if self.duration == hitNote.hold_time then
+                table.remove(self.notes, closestIndex) 
+                self.isHeld = false --//FIXME make this work :/
+            end
         else
             table.remove(self.notes, closestIndex) 
         end

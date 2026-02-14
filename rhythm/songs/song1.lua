@@ -4,7 +4,7 @@ song:play()
 return { --f is red, j is blue
     bpm = 150,
     notes = {
-        {time = 2, offset = 200, type = "holdf", note_duration = 0.1}, --remove this eventually
+        --{time = 2, offset = 200, type = "holdf", note_duration = 0.1},
         {time = 9.5, offset = 200, type = "speciald", note_duration = 0},
         {time = 10.5, offset = 200, type = "speciald", note_duration = 0},
         {time = 11.5, offset = 200, type = "speciald", note_duration = 0},
@@ -125,17 +125,21 @@ return { --f is red, j is blue
         {time = 116.5, offset = 40, type = "normalj", note_duration= 0},
         {time = 117, offset = 60, type = "normalj", note_duration= 0},
         {time = 117.5, offset = 40, type = "normalj", note_duration= 0},
-        {time = 125, offset = 200, type = "speciald", note_duration= 0},  --doubles!!
-        {time = 125, offset = 140, type = "specialk", note_duration= 0},
-        {time = 126.5, offset = 200, type = "speciald", note_duration= 0}, 
-        {time = 126.5, offset = 140, type = "specialk", note_duration= 0},
-        {time = 128, offset = 200, type = "speciald", note_duration= 0}, 
-        {time = 128, offset = 140, type = "specialk", note_duration= 0},
-        {time = 129.5, offset = 200, type = "speciald", note_duration= 0}, 
-        {time = 129.5, offset = 140, type = "specialk", note_duration= 0},
-        {time = 131, offset = 200, type = "speciald", note_duration= 0},
-        {time = 131, offset = 140, type = "specialk", note_duration= 0}, --3rd repeat bruh
-        
+        {time = 126, offset = 200, type = "speciald", note_duration= 0},  --doubles!!
+        {time = 126, offset = 140, type = "specialk", note_duration= 0},
+        {time = 127.5, offset = 200, type = "speciald", note_duration= 0}, 
+        {time = 127.5, offset = 140, type = "specialk", note_duration= 0},
+        {time = 129, offset = 200, type = "speciald", note_duration= 0}, 
+        {time = 129, offset = 140, type = "specialk", note_duration= 0},
+        {time = 130.5, offset = 200, type = "speciald", note_duration= 0}, 
+        {time = 130.5, offset = 140, type = "specialk", note_duration= 0},
+        {time = 131.5, offset = 200, type = "speciald", note_duration= 0},
+        {time = 131.5, offset = 140, type = "specialk", note_duration= 0}, --3rd repeat bruh
+        {time = 133, offset = -200, type = "speciald", note_duration= 0},
+        {time = 133.5, offset = -140, type = "speciald", note_duration= 0},
+        {time = 134, offset = -200, type = "speciald", note_duration= 0},
+        {time = 134.5, offset = -140, type = "speciald", note_duration= 0},
+
     }
 }
 

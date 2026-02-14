@@ -19,13 +19,7 @@ function levelselection:draw()
     love.graphics.printf("level selection screen",0, 0, 0,"right")
     --love.graphics.printf("level selection screen", x - 250, y - 75, 10,"right")
     love.graphics.setColor(0, 0, 0)
-    love.graphics.rectangle("fill", screenwidth - 500, 100, 500, 100)
-    --[[ love.graphics.rectangle("fill", screenwidth - 500, 250, 500, 100)
-    love.graphics.rectangle("fill", screenwidth - 500, 400, 500, 100)
-    love.graphics.rectangle("fill", screenwidth - 500, 550, 500, 100)
-    love.graphics.rectangle("fill", screenwidth - 500, 700, 500, 100)
-    love.graphics.rectangle("fill", screenwidth - 500, 850, 500, 100)
-    love.graphics.rectangle("fill", screenwidth - 500, 1000, 500, 100) ]]--
+    love.graphics.rectangle("fill", screenwidth - 500, 100, 500, 100) --//TODO make it look good and add the custom gui stuffs
 end
 
 function levelselection:mousepressed(mouseX, mouseY, button, istouch)
