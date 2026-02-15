@@ -16,6 +16,8 @@ function pause:keypressed(key)
         statemanager.pop(require("pause"))
         statemanager.switch(require("game"))
         song:play()
+    elseif key == "m" then
+        --TODO adf menu return
     end
 end
 
