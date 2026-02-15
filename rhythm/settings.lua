@@ -12,7 +12,7 @@ function settings:draw()
     love.graphics.setFont(tiny)
     love.graphics.print("scroll speed", 0, 100) --//TODO add buttons eventually
     love.graphics.print("developer mode", 0, 150)
-    love.graphics.print("keybinds", 0, 200)
+    love.graphics.print("keybinds", 0, 200) --//TODO  button with listener i think
 end
 
 function settings:keypressed(key) 
