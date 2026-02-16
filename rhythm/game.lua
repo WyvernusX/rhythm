@@ -29,7 +29,7 @@ function game:spawnNote(type, offset, note_duration)
        yc = self.centerY + safeOffset,
        type = type,
        note_duration = hold_time,
-       active = true -- add long note tails eventually
+       active = true --//TODO add long note tails eventually
     }
     table.insert(self.notes, note)
 end
@@ -141,6 +141,7 @@ function game:checkHit(keyType)
             self.isHeld = true
             hitNote.xc = self.line_x
             if self.duration == hitNote.hold_time then
+                self.isHeld = true
                 table.remove(self.notes, closestIndex) 
                 self.isHeld = false --//FIXME make this work :/
             end
