@@ -136,10 +136,17 @@ return { --f is red, j is blue
         {time = 131.5, offset = 200, type = "speciald", note_duration= 0},
         {time = 131.5, offset = 140, type = "specialk", note_duration= 0}, --3rd repeat bruh
         {time = 133, offset = -200, type = "speciald", note_duration= 0},
-        {time = 133.5, offset = -140, type = "speciald", note_duration= 0},
-        {time = 134, offset = -200, type = "speciald", note_duration= 0},
-        {time = 134.5, offset = -140, type = "speciald", note_duration= 0},
-
+        {time = 133.75, offset = -140, type = "speciald", note_duration= 0}, --new freaky part
+        {time = 134.5, offset = -200, type = "speciald", note_duration= 0},
+        {time = 135.25, offset = -140, type = "speciald", note_duration= 0},
+        {time = 136, offset = 200, type = "specialk", note_duration= 0},
+        {time = 136.75, offset = 140, type = "specialk", note_duration= 0},
+        {time = 137.5, offset = 200, type = "specialk", note_duration= 0},
+        {time = 138.25, offset = 140, type = "specialk", note_duration= 0},
+        {time = 142, offset = 200, type = "speciald", note_duration= 0}, 
+        {time = 142.75, offset = 140, type = "speciald", note_duration= 0},
+        {time = 143.5, offset = 200, type = "speciald", note_duration= 0},
+        {time = 144.25, offset = 140, type = "speciald", note_duration= 0},
     }
 }
 

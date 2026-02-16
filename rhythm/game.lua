@@ -81,7 +81,7 @@ function game:draw()
     love.graphics.setColor(1, 1, 1)
     love.graphics.rectangle("fill", 100, screenheight / 2 - 250, 20, 500)
     love.graphics.print("d = green, f = red, j = blue, k = yellow", 10, 10)
-    love.graphics.print(self.duration, 10, 50)
+    --love.graphics.print(self.duration, 10, 50)
     
     for _, note in ipairs(self.notes) do 
         if note.active then
