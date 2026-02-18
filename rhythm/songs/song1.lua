@@ -4,7 +4,7 @@ song:play()
 return { --f is red, j is blue
     bpm = 150,
     notes = {
-        {time = 2, offset = 200, type = "holdf", note_duration = 0.1},
+        --{time = 2, offset = 200, type = "holdf", note_duration = 0.1},
         {time = 9.5, offset = 200, type = "speciald", note_duration = 0},
         {time = 10.5, offset = 200, type = "speciald", note_duration = 0},
         {time = 11.5, offset = 200, type = "speciald", note_duration = 0},
