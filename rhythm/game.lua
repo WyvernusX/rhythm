@@ -20,6 +20,7 @@ function game:enter()
     self.musicStarted = false
     self.duration = 0
     self.isHeld = false
+    local printb = 0
 end
 
 function game:spawnNote(type, offset, note_duration)
@@ -81,6 +82,12 @@ function game:draw()
     love.graphics.setColor(1, 1, 1)
     love.graphics.rectangle("fill", 100, screenheight / 2 - 250, 20, 500)
     love.graphics.print("d = green, f = red, j = blue, k = yellow", 10, 10)
+    --[[while true do
+        love.timer.sleep(1)
+        printb = printb + 2.5
+    end]]--
+    --//TODO finish this stuff
+    love.graphics.print('bpm', 10, 550)
     --love.graphics.print(self.duration, 10, 50)
     
     for _, note in ipairs(self.notes) do 
@@ -155,13 +162,16 @@ function game:keypressed(key)
     if key == "backspace" then
         local isFullscreen = love.window.getFullscreen()
         love.window.setFullscreen(not isFullscreen, "desktop")
-        
     elseif key == "escape" then
         if statemanager then
             statemanager.pop() 
             love.audio.stop(song)
             statemanager.switch(require("pause"))
         end 
+    elseif key == "2" then
+        if devmode == true then
+            song:seek(song:tell() + 5)
+        end
     elseif key == "f" then
         self:checkHit("normalf")
     elseif key == "j" then

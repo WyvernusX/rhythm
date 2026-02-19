@@ -149,7 +149,17 @@ return { --f is red, j is blue
         {time = 144.25, offset = 140, type = "speciald", note_duration= 0},
         {time = 145, offset = 200, type = "specialk", note_duration= 0},
         {time = 145.75, offset = 140, type = "specialk", note_duration= 0},
-        {time = 146.5, offset = 200, type = "specialk", note_duration= 0},
+        {time = 147, offset = -200, type = "specialk", note_duration= 0},
+        {time = 147.5, offset = -140, type = "specialk", note_duration= 0},
+        {time = 148, offset = -200, type = "specialk", note_duration= 0},
+        {time = 151, offset = 220, type = "speciald", note_duration= 0},
+        {time = 151.5, offset = 160, type = "speciald", note_duration= 0},
+        {time = 152, offset = 220, type = "speciald", note_duration= 0},
+        {time = 152.5, offset = 160, type = "speciald", note_duration= 0},
+        {time = 153, offset = 220, type = "speciald", note_duration= 0},
+        {time = 153.5, offset = -200, type = "specialk", note_duration= 0},
+        {time = 154, offset = -140, type = "specialk", note_duration= 0},
+        {time = 154.5, offset = -200, type = "specialk", note_duration= 0},
     }
 }
 
