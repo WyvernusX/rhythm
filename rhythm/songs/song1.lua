@@ -1,5 +1,6 @@
 song = love.audio.newSource("assets/song1.mp3", "static")
 song:play()
+song1duration = song:getDuration()
 
 return { --f is red, j is blue
     bpm = 150,
@@ -156,11 +157,12 @@ return { --f is red, j is blue
         {time = 151.5, offset = 160, type = "speciald", note_duration= 0},
         {time = 152, offset = 220, type = "speciald", note_duration= 0},
         {time = 152.5, offset = 160, type = "speciald", note_duration= 0},
-        {time = 153, offset = 220, type = "speciald", note_duration= 0},
-        
-        {time = 156.5, offset = -200, type = "specialk", note_duration= 0},
-        {time = 157, offset = -140, type = "specialk", note_duration= 0},
-        {time = 157.5, offset = -200, type = "specialk", note_duration= 0},
+        {time = 153, offset = 220, type = "specialk", note_duration= 0},
+        {time = 153.5, offset = 160, type = "specialk", note_duration= 0},
+        {time = 154, offset = 220, type = "specialk", note_duration= 0},
+        {time = 156.5, offset = -200, type = "speciald", note_duration= 0},
+        {time = 157, offset = -140, type = "speciald", note_duration= 0},
+        {time = 157.5, offset = -200, type = "speciald", note_duration= 0},
     }
 }
 
