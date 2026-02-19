@@ -4,8 +4,7 @@ function game:enter()
     self.notes = {}
     screenwidth, screenheight = love.graphics.getDimensions()
     self.centerY = screenheight / 2 
-    local chartData = require("songs/song1")
-    
+    local chartData = require("songs/song1") --//TODO change this to scale based off level selected, w a variable AND the pause menu
     self.bpm = chartData.bpm 
     self.chart = chartData.notes
     self.chartIndex = 1
@@ -82,6 +81,7 @@ function game:draw()
     love.graphics.setColor(1, 1, 1)
     love.graphics.rectangle("fill", 100, screenheight / 2 - 250, 20, 500)
     love.graphics.print("d = green, f = red, j = blue, k = yellow", 10, 10)
+    love.graphics.print(song:tell(), 500, 550)
     --[[while true do
         love.timer.sleep(1)
         printb = printb + 2.5
@@ -168,10 +168,14 @@ function game:keypressed(key)
             love.audio.stop(song)
             statemanager.switch(require("pause"))
         end 
+    elseif key == "1" then
+        --if devmode == true then
+            song:seek(song:tell() - 5)
+        --end
     elseif key == "2" then
-        if devmode == true then
+        --if devmode == true then
             song:seek(song:tell() + 5)
-        end
+        --end
     elseif key == "f" then
         self:checkHit("normalf")
     elseif key == "j" then
