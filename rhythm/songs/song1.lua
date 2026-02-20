@@ -163,6 +163,14 @@ return { --f is red, j is blue
         {time = 156.5, offset = -200, type = "speciald", note_duration= 0},
         {time = 157, offset = -140, type = "speciald", note_duration= 0},
         {time = 157.5, offset = -200, type = "speciald", note_duration= 0},
+        {time = 163.5, offset = -200, type = "normalf", note_duration = 0}, --small new
+        {time = 164, offset = -80 , type = "normalf", note_duration = 0},
+        {time = 164.5, offset = -140 , type = "normalf", note_duration = 0},
+        {time = 165, offset = -80, type = "normalf", note_duration = 0},
+        {time = 165.5, offset = -80 , type = "normalj", note_duration = 0},
+        {time = 166, offset = -20 , type = "normalj", note_duration = 0},
+        {time = 166.5, offset = -80, type = "normalj", note_duration = 0},
+        {time = 167, offset = -140, type = "normalf", note_duration = 0},
     }
 }
 
