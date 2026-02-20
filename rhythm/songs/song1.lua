@@ -170,7 +170,12 @@ return { --f is red, j is blue
         {time = 165.5, offset = -80 , type = "normalj", note_duration = 0},
         {time = 166, offset = -20 , type = "normalj", note_duration = 0},
         {time = 166.5, offset = -80, type = "normalj", note_duration = 0},
-        {time = 167, offset = -140, type = "normalf", note_duration = 0},
+        {time = 167.5, offset = -140, type = "normalf", note_duration = 0},
+        {time = 169, offset = -80, type = "normalj", note_duration = 0},
+        {time = 169.5, offset = -20, type = "normalj", note_duration = 0},
+        {time = 170.5, offset = -80, type = "normalj", note_duration = 0},
+        {time = 171, offset = -20, type = "normalj", note_duration = 0},
+        {time = 171.5, offset = 40, type = "normalj", note_duration = 0},
     }
 }
 
