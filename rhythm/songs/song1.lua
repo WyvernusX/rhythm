@@ -178,6 +178,15 @@ return { --f is red, j is blue
         {time = 175.5, offset = 40, type = "normalf", note_duration = 0},
         {time = 176, offset = 100, type = "normalf", note_duration = 0},
         {time = 176.5, offset = 160, type = "normalf", note_duration = 0},
+        {time = 177.5, offset = -200, type = "normalj", note_duration = 0},
+        {time = 178, offset = -140, type = "normalj", note_duration = 0},
+        {time = 178.5, offset = -200, type = "normalj", note_duration = 0},
+        {time = 181, offset = -80, type = "normalf", note_duration = 0}, --freak
+        {time = 181.75, offset = -20, type = "normalf", note_duration = 0},
+        {time = 182.25, offset = -80, type = "normalf", note_duration = 0},
+        {time = 183.25, offset = -20, type = "normalf", note_duration = 0},
+        {time = 184, offset = -80, type = "normalf", note_duration = 0},
+        {time = 184.5, offset = -20, type = "normalf", note_duration = 0},
     }
 }
 
