@@ -35,6 +35,11 @@ function game:spawnNote(type, offset, note_duration)
 end
 
 function game:update(dt)
+    if song:tell() >= song:getDuration() then
+        statemanager.pop("game")
+        statemanager.switch(require("endscreen"))
+        song:stop()
+    end 
     if not self.musicStarted then
         self.timer = self.timer + dt
         if self.timer >= 0 then

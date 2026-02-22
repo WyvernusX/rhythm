@@ -187,6 +187,9 @@ return { --f is red, j is blue
         {time = 183.25, offset = -20, type = "normalf", note_duration = 0},
         {time = 184, offset = -80, type = "normalf", note_duration = 0},
         {time = 184.5, offset = -20, type = "normalf", note_duration = 0},
+        {time = 186, offset = -200, type = "normalj", note_duration = 0},
+        {time = 186.5, offset = -140, type = "normalj", note_duration = 0},
+        {time = 187, offset = -200, type = "normalj", note_duration = 0},
     }
 }
 
