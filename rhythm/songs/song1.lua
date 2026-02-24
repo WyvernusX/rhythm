@@ -190,8 +190,17 @@ return { --f is red, j is blue
         {time = 186, offset = -200, type = "normalj", note_duration = 0},
         {time = 186.5, offset = -140, type = "normalj", note_duration = 0},
         {time = 187, offset = -200, type = "normalj", note_duration = 0},
-        {time = 190, offset = 200, type = "specialk", note_duration = 0},
-        {time = 190, offset= 140, type = "speciald", note_duration = 0 },
+        {time = 193, offset = 200, type = "specialk", note_duration = 0},
+        {time = 193, offset= 140, type = "speciald", note_duration = 0 },
+        {time = 194, offset = 200, type = "specialk", note_duration = 0},
+        {time = 194, offset= 140, type = "speciald", note_duration = 0 },
+        {time = 195, offset = 200, type = "specialk", note_duration = 0},
+        {time = 195, offset= 140, type = "speciald", note_duration = 0 },
+        {time = 196, offset = 200, type = "specialk", note_duration = 0},
+        {time = 196, offset= 140, type = "speciald", note_duration = 0 },
+        {time = 197, offset = 200, type = "specialk", note_duration = 0},
+        {time = 197, offset= 140, type = "speciald", note_duration = 0 },
+        
     }
 }
 
