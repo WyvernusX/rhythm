@@ -190,6 +190,8 @@ return { --f is red, j is blue
         {time = 186, offset = -200, type = "normalj", note_duration = 0},
         {time = 186.5, offset = -140, type = "normalj", note_duration = 0},
         {time = 187, offset = -200, type = "normalj", note_duration = 0},
+        {time = 190, offset = 200, type = "specialk", note_duration = 0},
+        {time = 190, offset= 140, type = "speciald", note_duration = 0 },
     }
 }
 
