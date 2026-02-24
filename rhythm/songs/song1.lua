@@ -200,6 +200,13 @@ return { --f is red, j is blue
         {time = 196, offset= 140, type = "speciald", note_duration = 0 },
         {time = 197, offset = 200, type = "specialk", note_duration = 0},
         {time = 197, offset= 140, type = "speciald", note_duration = 0 }, --5 notes after ts
+        {time = 197.5, offset = -200, type = "normalf", note_duration = 0},
+        {time = 198, offset = -140, type = "normalj", note_duration = 0},
+        {time = 198.5, offset = -80, type = "normalf", note_duration = 0},
+        {time = 199, offset = -20, type = "normalj", note_duration = 0},
+        {time = 199.5, offset =  40, type = "normalf", note_duration = 0},
+        {time = 200, offset = 100, type = "normalj", note_duration = 0},
+        {time = 200, offset = 160, type = "normalf", note_duration = 0},
     }
 }
 
