@@ -200,7 +200,10 @@ return { --f is red, j is blue
         {time = 196, offset= 140, type = "speciald", note_duration = 0 },
         {time = 197, offset = 200, type = "specialk", note_duration = 0},
         {time = 197, offset= 140, type = "speciald", note_duration = 0 },
+<<<<<<< HEAD
         
+=======
+>>>>>>> 0e11eeba7696019783f3feb07ad20ed1b0b0af0b
     }
 }
 
