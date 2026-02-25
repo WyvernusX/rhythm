@@ -35,7 +35,7 @@ function game:spawnNote(type, offset, note_duration)
 end
 
 function game:update(dt)
-    if song:tell() >= 140 then
+    if song:tell() >= 999999 then
         statemanager.pop("game")
         statemanager.switch(require("endscreen"))
         song:stop()
