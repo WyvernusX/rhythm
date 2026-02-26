@@ -12,7 +12,7 @@ function game:enter()
     self.line_x = 110 
     self.spawn_x = screenwidth + 100
     local distance = self.spawn_x - self.line_x
-    local approachTime = 2.0  -- base speed
+    local approachTime = scrollspeed  -- base speed
     self.speed = distance / approachTime --scroll speed
     self.travelTime = distance / self.speed --dont touch this or your die
     self.timer = -self.travelTime
