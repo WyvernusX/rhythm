@@ -3,6 +3,7 @@ setting_music = love.audio.newSource("assets/settings.mp3", "static")
 setting_music:setLooping(true)
 setting_music:play()
 scrollspeed = 2
+interacted = false
 
 function settings:draw()
     love.graphics.setFont(small)
@@ -38,9 +39,11 @@ function settings:mousepressed(mouseX, mouseY, button, istouch)
     if mouseX >= 220 and mouseX <= 220 + 40 and
        mouseY >= 100 and mouseY <= 100 + 40 then
         scrollspeed = scrollspeed + 0.1
+        interact = true
     elseif mouseX >= 360 and mouseX <= 360 + 40 and
         mouseY >= 100 and mouseY <= 100 + 40 then
         scrollspeed = scrollspeed - 0.1
+        interacted = true
     end
 end
 

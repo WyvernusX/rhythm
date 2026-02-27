@@ -12,8 +12,13 @@ function game:enter()
     self.line_x = 110 
     self.spawn_x = screenwidth + 100
     local distance = self.spawn_x - self.line_x
-    local approachTime = scrollspeed  -- base speed
-    self.speed = distance / approachTime --scroll speed
+    if interacted == true then
+        local approachTime = scrollspeed  -- base speed
+        self.speed = distance / approachTime --scroll speed
+    else
+        local approachTime = 2  -- base speed
+        self.speed = distance / 2 --scroll speed
+    end
     self.travelTime = distance / self.speed --dont touch this or your die
     self.timer = -self.travelTime
     self.musicStarted = false
@@ -86,7 +91,12 @@ function game:draw()
     love.graphics.setColor(1, 1, 1)
     love.graphics.rectangle("fill", 100, screenheight / 2 - 250, 20, 500)
     love.graphics.print("d = green, f = red, j = blue, k = yellow", 10, 10)
-    love.graphics.print(song:tell(), 500, 550)
+    if interacted == true then
+        love.graphics.print(scrollspeed, 200, 400)
+    else
+        love.graphics.print('2', 200, 550)
+    end
+    love.graphics.print(song:tell(), 400, 550)
     --[[while true do
         love.timer.sleep(1)
         printb = printb + 2.5
