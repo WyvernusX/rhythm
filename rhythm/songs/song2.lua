@@ -5,6 +5,6 @@ song1duration = song:getDuration()
 return {
     bpm = 67,
     notes = [
-        --imagine shits here
+       {time = 0, offset = 0, note_type = "normalf", note_duration = 0}
     ]
 }
