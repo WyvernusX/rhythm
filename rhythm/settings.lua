@@ -12,15 +12,15 @@ function settings:draw()
     love.graphics.setColor(1, 1, 1)
     love.graphics.printf("settings", 0, 10, screenwidth, "center")
     love.graphics.setFont(tiny)
-    love.graphics.printf("scroll speed", 0, 100) --//TODO add buttons eventually
-    love.graphics.print("developer mode", 0, 150, screenwidth, "center")
-    love.graphics.printf("keybinds", 0, 200, screenwidth, "center") --//TODO  button with listener i think
+    love.graphics.printf("scroll speed", 0, 100, screenwidth, "center") --//TODO add buttons eventually
+    love.graphics.printf("developer mode", 0, 200, screenwidth, "center")
+    love.graphics.printf("keybinds", 0, 300, screenwidth, "center") --//TODO  button with listener i think
     love.graphics.setColor(1, 1, 1)
-    love.graphics.rectangle("fill", 220, 100, 40, 40)
-    love.graphics.rectangle("fill", 280, 100, 60, 40)
-    love.graphics.rectangle("fill", 360, 100, 40, 40)
+    love.graphics.rectangle("fill", x + 50, y - 145, 40, 40)
+    love.graphics.rectangle("fill", x, y - 145, 60, 40)
+    love.graphics.rectangle("fill", x - 30, y - 145, 40, 40)
     love.graphics.setColor(0, 0, 0)
-    love.graphics.print(scrollspeed, 300, 100)
+    love.graphics.print(scrollspeed, x, y - 145)
 end
 
 function settings:keypressed(key) 
