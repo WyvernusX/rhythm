@@ -16,7 +16,7 @@ function settings:draw()
     love.graphics.printf("developer mode", 0, 200, screenwidth, "center")
     love.graphics.printf("keybinds", 0, 300, screenwidth, "center") --//TODO  button with listener i think
     love.graphics.setColor(1, 1, 1)
-    love.graphics.rectangle("fill", x + 50, y - 145, 40, 40)
+    love.graphics.rectangle("fill", x + 0, y - 145, 40, 40)
     love.graphics.rectangle("fill", x, y - 145, 60, 40)
     love.graphics.rectangle("fill", x - 30, y - 145, 40, 40)
     love.graphics.setColor(0, 0, 0)
