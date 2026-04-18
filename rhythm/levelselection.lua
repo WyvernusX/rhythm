@@ -20,16 +20,20 @@ function levelselection:draw()
     --love.graphics.printf("level selection screen", x - 250, y - 75, 10,"right")
     love.graphics.setColor(0, 0, 0)
     love.graphics.rectangle("fill", screenwidth - 500, 100, 500, 100) --//TODO make it look good and add the custom gui stuffs
+    love.graphics.rectangle("fill", screenwidth - 500, 300, 500, 100)
 end
 
 function levelselection:mousepressed(mouseX, mouseY, button, istouch)
     click:play()
     if button == 1 then
         if mouseX >= screenwidth - 500 and mouseX <= screenwidth and mouseY >= 100 and mouseY <= 200 then
-            statemanager.pop(require("menu"))
-            statemanager.pop(require("levelselection"))
-            statemanager.switch(require("game"))
+            level = "first"
+        elseif mouseX >= screenwidth - 500 and mouseX <= screenwidth and mouseY >= 300 and mouseY <= 400 then
+            level = "second"
         end
+        statemanager.pop(require("menu"))
+        statemanager.pop(require("levelselection"))
+        statemanager.switch(require("game"))
     end
 end
 

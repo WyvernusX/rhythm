@@ -2,9 +2,15 @@ local game = {}
 
 function game:enter()
     self.notes = {}
+    package.loaded["songs/song1"] = nil  
+    package.loaded["songs/song2"] = nil
     screenwidth, screenheight = love.graphics.getDimensions()
     self.centerY = screenheight / 2 
-    local chartData = require("songs/song1") --//TODO change this to scale based off level selected, w a variable AND the pause menu
+    if level == "first" then
+        chartData = require("songs/song1")
+    elseif level == "second" then
+        chartData = require("songs/song2")
+    end
     self.bpm = chartData.bpm 
     self.chart = chartData.notes
     self.chartIndex = 1
@@ -29,11 +35,12 @@ end
 
 function game:spawnNote(type, offset, note_duration)
     local safeOffset = offset or 0
+    local safeDuration = note_duration or 0
     local note = {
        xc = self.spawn_x, 
        yc = self.centerY + safeOffset,
        type = type,
-       note_duration = hold_time,
+       note_duration = safeDuration,
        active = true --//TODO add long note tails eventually
     }
     table.insert(self.notes, note)
