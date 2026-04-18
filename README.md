@@ -2,7 +2,13 @@
 basic rhythm game project inspired by project rusher and friday night funkin
 
 ## about
-rhythm is meant to be a unique style of rhythm game, blending elements from rhythm games and classical music to create a new experience. this blend allows for players to play nintendo songs (zelda, pokemon, animal crossing, mario) with a unique twist. with a 4 key layout (dfjk) and a multi-key bar. 
+rhythm is meant to be a unique style of rhythm game, blending elements from rhythm games and classical music to create a new experience. this blend allows for players to play a wide array of songs from nintendo: (zelda, pokemon, animal crossing, mario) to geometry dash and minecraft songs with a unique twist. with a 4 key layout (dfjk) and a multi-key bar. 
+
+## songs
+currently, we have the divine beast battle with vah naboris, and song of storms in the works. future songs will include:
+-tidal wave (shiawase vip)
+-totk ganondork boss (full)
+-otherside (mc disc)
 
 ## why
 i was bored 

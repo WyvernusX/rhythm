@@ -22,7 +22,7 @@ function love.mousepressed(x, y, button)
     statemanager.mousepressed(x, y, button)
 end
 
-function love.update(dt)
+function love.update(dt) 
     statemanager.update(dt)
 end
 

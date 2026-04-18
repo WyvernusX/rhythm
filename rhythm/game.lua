@@ -1,6 +1,7 @@
 local game = {}
 
 function game:enter()
+    misses = 0
     self.notes = {}
     package.loaded["songs/song1"] = nil  
     package.loaded["songs/song2"] = nil
@@ -109,7 +110,7 @@ function game:draw()
         printb = printb + 2.5
     end]]--
     --//TODO finish this stuff
-    love.graphics.print('bpm', 10, 550)
+    love.graphics.print(misses, 10, 550)
     --love.graphics.print(self.duration, 10, 50)
     
     for _, note in ipairs(self.notes) do 
@@ -164,6 +165,7 @@ function game:checkHit(keyType)
     end
 
     if closestIndex ~= -1 and closestDist <= hitWindow then --get rid of old notes
+        misses = misses + 1
         local hitNote = self.notes[closestIndex]
         
         if hitNote.type == "holdf" or hitNote.type == "holdj" then
