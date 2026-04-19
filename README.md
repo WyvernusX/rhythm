@@ -5,8 +5,9 @@ basic rhythm game project inspired by project rusher and friday night funkin
 rhythm is meant to be a unique style of rhythm game, blending elements from rhythm games and classical music to create a new experience. this blend allows for players to play a wide array of songs from nintendo: (zelda, pokemon, animal crossing, mario) to geometry dash and minecraft songs with a unique twist. with a 4 key layout (dfjk) and a multi-key bar. 
 
 ## songs
-currently, we have the divine beast battle with vah naboris, and song of storms in the works. future songs will include:
+currently, we have the divine beast battle with vah naboris, and song of storms (oot). future songs will include:
 -tidal wave (shiawase vip)
+-colgera totk boss music (abridged)
 -totk ganondork boss (full)
 -otherside (mc disc)
 

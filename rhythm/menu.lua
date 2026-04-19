@@ -12,11 +12,14 @@ function menu:enter()
     medium = love.graphics.newFont("assets/font1.otf", 80)
     small = love.graphics.newFont("assets/font1.otf", 50)
     tiny = love.graphics.newFont("assets/font1.otf", 30)
+    background = love.graphics.newImage("assets/climb.jpg")
     love.audio.play(main_theme)
     love.audio.setVolume(0.25)
     playing = true
     click = love.audio.newSource("assets/click.mp3", "static")
+    hover = love.audio.newSource("assets/hover.flac", "static")
     main_theme:setLooping(true)
+
 end 
 
 function menu:draw()
@@ -27,18 +30,23 @@ function menu:draw()
     love.graphics.setColor(1, 1, 1)
     love.graphics.setBackgroundColor(0.2, 0.2, 0.2)
     love.graphics.setFont(medium)
-    love.graphics.printf('rhythm', 10, 40, screenwidth, 'center')
+    love.graphics.draw(background, 0, 0)
+    love.graphics.setColor(56/255, 186/255, 238/255)
+    love.graphics.printf('rhythm', 47, 40, screenwidth, 'left')
     love.graphics.setFont(tiny)
-    love.graphics.print(text, x + 200, 160, rotation, 1, 1, textWidth / 2, textHeight / 2)
-    love.graphics.setColor(1, 1, 1)
-    love.graphics.rectangle("fill", x - 250, y - 100, 500, 100)
-    love.graphics.rectangle("fill", x - 250, y + 20, 500, 100)
-    love.graphics.rectangle("fill", x - 250, y + 140, 500, 100)
     love.graphics.setColor(0, 0, 0)
+    love.graphics.printf("by wyv", 50, 130, screenwidth, "left")
+    love.graphics.rectangle("fill", x - 350, y - 100, 400, 100)
+    love.graphics.rectangle("fill", x - 350, y + 20, 400, 100)
+    love.graphics.rectangle("fill", x - 350, y + 140, 400, 100)
+    love.graphics.rectangle("fill", x - 350, y - 100, 400, 100) --smaller accent ones
+    love.graphics.rectangle("fill", x - 350, y + 20, 400, 100) --##TODO: add actual colors to ts
+    love.graphics.rectangle("fill", x - 350, y + 140, 400, 100)
+    love.graphics.setColor(1, 1, 1)
     love.graphics.setFont(small)
-    love.graphics.printf('play', x - 250, y - 75, 500, 'center')
-    love.graphics.printf('settings', x - 250, y + 45, 500, 'center')
-    love.graphics.printf('exit', x - 250, y + 165, 500, 'center')
+    love.graphics.printf('play', x - 250, y - 75, 500, 'left')
+    love.graphics.printf('settings', x - 250, y + 45, 500, 'left')
+    love.graphics.printf('exit', x - 250, y + 165, 500, 'left')
 end
 
 function menu:keypressed(key)
@@ -58,7 +66,7 @@ function menu:keypressed(key)
     end
 end
 
-function menu:mousepressed(mouseX, mouseY, button, istouch)
+function menu:mousepressed(mouseX, mouseY, button, istouch) --##TODO: update the values for the new placements
     if button == 1 then 
         love.audio.play(click) 
         if mouseX >= x - 250 and mouseX <= x + 250 and
@@ -75,6 +83,19 @@ function menu:mousepressed(mouseX, mouseY, button, istouch)
                mouseY >= y + 140 and mouseY <= y + 240 then
             love.event.quit()
         end
+    end
+end
+
+function menu:mousemoved(mx, my, dx, dy, istouch)
+    if mouseX >= x - 250 and mouseX <= x + 250 and
+            mouseY >= y - 100 and mouseY <= y then
+                love.audio.play(hover)
+    elseif mouseX >= x - 250 and mouseX <= x + 250 and
+            mouseY >= y + 20 and mouseY <= y + 120 then
+        love.audio.play(hover)
+    elseif mouseX >= x - 250 and mouseX <= x + 250 and 
+            mouseY >= y + 140 and mouseY <= y + 240 then
+        love.audio.play(hover)
     end
 end
 
