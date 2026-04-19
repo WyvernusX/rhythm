@@ -23,9 +23,7 @@ function love.mousepressed(x, y, button)
 end
 
 function love.mousemoved(mx, my, dx, dy, istouch)
-    if currentState and currentState.mousemoved then
-        statemanager.mousemoved(mx, my, dx, dy, istouch)
-    end
+    statemanager.mousemoved(mx, my, dx, dy, istouch)
 end
 
 function love.update(dt) 

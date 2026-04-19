@@ -1,7 +1,7 @@
 local game = {}
 
 function game:enter()
-    misses = 0
+    hit = 0
     self.notes = {}
     package.loaded["songs/song1"] = nil  
     package.loaded["songs/song2"] = nil
@@ -12,6 +12,7 @@ function game:enter()
     elseif level == "second" then
         chartData = require("songs/song2")
     end
+    songTimes = { ["first"] = 169, ["second"] = 52,}
     self.bpm = chartData.bpm 
     self.chart = chartData.notes
     self.chartIndex = 1
@@ -48,7 +49,7 @@ function game:spawnNote(type, offset, note_duration)
 end
 
 function game:update(dt)
-    if song:tell() >= 169 then
+    if song:tell() >= songTimes[level] then
         statemanager.pop("game")
         statemanager.switch(require("endscreen"))
         song:stop()
@@ -110,7 +111,7 @@ function game:draw()
         printb = printb + 2.5
     end]]--
     --//TODO finish this stuff
-    love.graphics.print(misses, 10, 550)
+    love.graphics.print(hit, 10, 550)
     --love.graphics.print(self.duration, 10, 50)
     
     for _, note in ipairs(self.notes) do 
@@ -165,7 +166,7 @@ function game:checkHit(keyType)
     end
 
     if closestIndex ~= -1 and closestDist <= hitWindow then --get rid of old notes
-        misses = misses + 1
+        hit = hit + 1
         local hitNote = self.notes[closestIndex]
         
         if hitNote.type == "holdf" or hitNote.type == "holdj" then

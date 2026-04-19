@@ -28,9 +28,6 @@ function settings:keypressed(key)
         statemanager.pop(require("settings"))
         statemanager.switch(require("menu"))
         setting_music:stop()
-    elseif key == "f" then
-        local isFullscreen = love.window.getFullscreen()
-        love.window.setFullscreen(not isFullscreen, "desktop")
     end
 end
 

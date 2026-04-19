@@ -18,6 +18,12 @@ function statemanager.pop()
     if oldState and oldState.exit then oldState:exit() end
 end
 
+function statemanager.mousemoved(mx, my, dx, dy, istouch)
+    if states[#states] and states[#states].mousemoved then
+        states[#states]:mousemoved(mx, my, dx, dy, istouch)
+    end
+end
+
 function statemanager.update(dt)
     if states[#states] and states[#states].update then
         states[#states]:update(dt)
