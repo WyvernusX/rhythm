@@ -2,6 +2,7 @@ local game = {}
 
 function game:enter()
     hit = 0
+    misses = 0
     self.notes = {}
     package.loaded["songs/song1"] = nil  
     package.loaded["songs/song2"] = nil
@@ -11,6 +12,8 @@ function game:enter()
         chartData = require("songs/song1")
     elseif level == "second" then
         chartData = require("songs/song2")
+    else
+        chartData = None
     end
     songTimes = { ["first"] = 169, ["second"] = 52,}
     self.bpm = chartData.bpm 
@@ -103,7 +106,7 @@ function game:draw()
     if interacted == true then
         love.graphics.print(scrollspeed, 200, 400)
     else
-        love.graphics.print('2', 200, 550)
+        love.graphics.print(misses, 200, 550)
     end
     love.graphics.print(song:tell(), 400, 550)
     --[[while true do
@@ -152,7 +155,7 @@ function game:checkHit(keyType)
     if self.speed >= 850 then --if u delete ts then ts breaks
         hitWindow = 150 
     else
-         hitWindow = 50 
+        hitWindow = 50 
     end
 
     for i, note in ipairs(self.notes) do
