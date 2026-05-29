@@ -20,7 +20,7 @@ function game:enter()
     self.chart = chartData.notes
     self.chartIndex = 1
     self.secondsPerBeat = 60 / self.bpm
-    self.line_x = 110 
+    self.line_x = 110
     self.spawn_x = screenwidth + 100
     local distance = self.spawn_x - self.line_x
     if interacted == true then
