@@ -1,5 +1,4 @@
 local game = {}
-
 function game:enter()
     hit = 0
     misses = 0
@@ -18,7 +17,7 @@ function game:enter()
     else
         chartData = None
     end
-    songTimes = { ["first"] = 169, ["second"] = 52, ["third"] = 226,}
+    songTimes = { ["first"] = 169, ["second"] = 52, ["third"] = 181,}
     self.bpm = chartData.bpm 
     self.chart = chartData.notes
     self.chartIndex = 1
@@ -153,6 +152,7 @@ function game:draw()
 end
 
 function game:checkHit(keyType)
+    print("")
     local closestDist = 999999
     local closestIndex = -1 -- range is ~900 or 800 idk twin, add formula maybe??
     if self.speed >= 850 then --if u delete ts then ts breaks

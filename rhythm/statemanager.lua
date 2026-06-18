@@ -2,8 +2,11 @@ local statemanager = {}
 local states = {}
 
 function statemanager.switch(state) 
-    if states[#states] and states[#states].exit then
-        states[#states]:exit()
+    if states[#states] then
+        if states[#states].exit then
+            states[#states]:exit()
+        end
+        table.remove(states) 
     end
 
     table.insert(states, state) 
