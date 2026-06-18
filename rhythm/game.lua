@@ -6,16 +6,19 @@ function game:enter()
     self.notes = {}
     package.loaded["songs/song1"] = nil  
     package.loaded["songs/song2"] = nil
+    package.loaded["songs/song3"] = nil
     screenwidth, screenheight = love.graphics.getDimensions()
     self.centerY = screenheight / 2 
     if level == "first" then
         chartData = require("songs/song1")
     elseif level == "second" then
         chartData = require("songs/song2")
+    elseif level == "third" then
+        chartData = require("songs/song3")
     else
         chartData = None
     end
-    songTimes = { ["first"] = 169, ["second"] = 52,}
+    songTimes = { ["first"] = 169, ["second"] = 52, ["third"] = 226,}
     self.bpm = chartData.bpm 
     self.chart = chartData.notes
     self.chartIndex = 1
@@ -35,7 +38,7 @@ function game:enter()
     self.musicStarted = false
     self.duration = 0
     self.isHeld = false
-    local printb = 0
+    --local printb = 0
 end
 
 function game:spawnNote(type, offset, note_duration)

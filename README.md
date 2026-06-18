@@ -5,8 +5,8 @@ basic rhythm game project inspired by project rusher and friday night funkin
 rhythm is meant to be a unique style of rhythm game, blending elements from rhythm games and classical music to create a new experience. this blend allows for players to play a wide array of songs from nintendo: (zelda, pokemon, animal crossing, mario) to geometry dash and minecraft songs with a unique twist. with a 4 key layout (dfjk) and a multi-key bar. 
 
 ## songs
-currently, we have the divine beast battle with vah naboris, and song of storms (oot). future songs will include:
--tidal wave (shiawase vip) \
+currently, we have the divine beast battle with vah naboris, song of storms (oot), and shiawase vip in dev. \
+future songs will include: \
 -colgera totk boss music (abridged) \
 -totk ganondork boss (full) \
 -otherside (mc disc) 
@@ -16,9 +16,10 @@ i was bored
 
 ## disclaimer
 none of this music is mine, credits are listed either in menu or below please dont smite me \
-game is optimised primarily for linux and windows! 
+game is optimised primarily for linux and windows 
 
 ## credits
-nintendo - basically all music (song of storms, vah naboris) \
+nintendo - basically all music (song of storms, attack on vah naboris) \
+dion timmer and monstercat - dudadudu (shiawase vip) \ 
 darknuck - main menu music (ocarina of time by darknuck on spotify) \
 epir - settings menu music (dark world by epir on spotify)
